@@ -1,9 +1,20 @@
 const container = document.querySelector(".container");
 const btn = document.querySelector(".btn");
 
+const random_rgb = () => {
+  let o = Math.round,
+    r = Math.random,
+    s = 255;
+  return "rgb(" + o(r() * s) + "," + o(r() * s) + "," + o(r() * s) + ")";
+};
+
 const fillSquare = (e) => {
-  if (e.target.classList.contains("filled-in")) return;
-  e.target.classList.add("filled-in");
+  // Fills in square with black
+  // if (e.target.classList.contains("filled-in")) return;
+  // e.target.classList.add("filled-in");
+
+  // Fills in square with random color
+  e.target.style.backgroundColor = random_rgb();
 };
 
 const buildGrid = (gridNum) => {
